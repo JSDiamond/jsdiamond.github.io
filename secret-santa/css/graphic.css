@@ -36,6 +36,7 @@ ul, p{
 .instro{
 	padding: 10px;
 	color: rgb(97,188,83);
+	font-size: 1.35em;
 }
 .inst1{
 	display: block;
@@ -243,6 +244,12 @@ ul, p{
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
+.expbox.lift{
+	animation: explift 0.6s ease normal;
+	-webkit-animation: explift 0.6s ease normal;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
 .expbox:after{
 	content: '✖';
 	position: fixed;
@@ -359,6 +366,9 @@ ul, p{
 	    top: 0px;
 	    background-color: #ddd;
 	}
+	.instro{
+		font-size: 1.1em;
+	}
 }
 
 
@@ -378,6 +388,22 @@ ul, p{
 	}
 	100% {
 		top: 0%;
+	}
+}
+@keyframes explift{
+	0%	{
+		top: 0%;
+	}
+	100% {
+		top: -100%;
+	}
+}
+@-webkit-keyframes explift{
+	0%   {
+		top: 0%;
+	}
+	100% {
+		top: -100%;
 	}
 }
 

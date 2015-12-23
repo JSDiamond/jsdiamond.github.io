@@ -157,6 +157,8 @@ db.mediaTest = function(){
 	function showAssignment(d){
 		if(!d3.selectAll('#santaslist').classed('assigned')) return
 
+		d3.select('.expbox').remove()
+
 		var flip = Math.floor(Math.random()*bgcolors.length)
 		var phn = Math.floor(Math.random()*phrases.length)
 
@@ -165,7 +167,11 @@ db.mediaTest = function(){
 			.style('background-color', bgcolors[flip])
 			.style('width', db.media.width+"px")
 			.style('height', db.media.height+"px")
-			.on('click', function(){d3.select('.expbox').remove()})
+			.on('click', function(){
+				var exp = d3.select('.expbox')
+				exp.classed('lift', true)
+				setTimeout(function(){ exp.remove() }, 600)
+			})
 
 		var tb = box.append('div').attr('class', 'tablecell').html('<p>Santa '+d.name+', <br>you\'re getting a gift for: <br> '+d.assigned+'</p> <p>❅ '+phrases[phn]+' ❅</p>')
 	}
