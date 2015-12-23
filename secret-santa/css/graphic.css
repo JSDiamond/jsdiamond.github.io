@@ -1,0 +1,353 @@
+*{
+	margin:0;
+	padding: 0;
+}
+
+#inner-content {
+    max-width: 100%;
+    margin: 0px auto 80px;
+    font-family: 'Arvo', 'Helvetica', sans-serif;
+}
+
+ul, p{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.fullwidth{
+	width: 100%;
+	position: relative;
+	margin: 0;
+}
+
+.innerwidth-A{
+	max-width: 620px;
+	margin: 0 auto;
+}
+
+.innerwidth-A h1{
+	padding: 10px;
+	font-size: 2em;
+	color: #444;
+	margin: 20px 0;
+}
+
+.namelist{
+	overflow: hidden;
+}
+
+.namelist .nameput{
+	margin: 0 10px 10px 10px;
+	position: relative;
+}
+
+.namelist .nameput input{
+	border: none;
+	background-color: #eee;
+	font-weight: 400;
+	outline: none;
+	font-size: 1em;
+	padding: 10px 16px;
+	min-width: 80%;
+	font-family: 'Arvo', 'Helvetica', sans-serif;
+}
+
+.namelist .nameput.submitted input, .namelist .nameput.submitted .btn-sim.submitname{
+	display: none;
+}
+.namelist .nameput.submitted .btn-sim.editname{
+	display: inline-block;
+}
+.namelist .nameput.submitted .btn-sim.deletename{
+	top: 5px;
+	background-color: #ddd;
+}
+.namelist .nameput.submitted .btn-sim.deletename:hover{
+	background-color: rgb(239,76,96);
+	color: #444;
+}
+.namelist .nameput.submitted .inputval{
+	display: inline-block;
+}
+
+.namelist .nameput.submitted{
+    margin-top: -5px;
+}
+
+.namelist .nameput.added input, .namelist .nameput.added .inputval{
+	margin-left: 4px;
+}
+
+.inputval{
+	background-color: #ddd;
+	font-weight: 400;
+	outline: none;
+	font-size: 1em;
+	color: #555;
+	padding: 10px 16px;
+	display: inline-block;
+	display: none;
+	min-width: 80%;
+}
+
+.btn-sim{
+	background-color: #ddd;
+	font-weight: 700;
+	outline: none;
+	font-size: 1em;
+	color: #555;
+	padding: 10px 16px;
+	display: inline-block;
+	clear: both;
+	cursor: pointer;
+	margin-right: 4px;
+	font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+.btn-sim:hover{
+	background-color: rgb(239,76,96);
+	color: #444;
+}
+
+.btn-sim:active{
+	background-color: #444;
+}
+
+.btn-sim.btn-inline{
+	max-width: 4%;
+	width: 4%;
+	text-align: center;
+}
+
+.btn-sim.btn-md{
+	margin: 10px;
+}
+
+.btn-sim.assign{
+	float: right;
+	pointer-events: none;
+	opacity: 0.4;
+}
+#santaslist.assignable .btn-sim.assign{
+	opacity: 1;
+	pointer-events: initial;
+}
+
+#santaslist.assigned .btn-sim.submitname, 
+#santaslist.assigned .btn-sim.deletename,
+#santaslist.assigned .btn-sim.editname,
+#santaslist.assigned .btn-sim.newname
+{
+	display: none;
+}
+#santaslist.assigned .inputval{
+	width: 96%;
+}
+#santaslist.assigned .inputval:after{
+	content: '✴';
+	position: absolute;
+	right: 20px;
+	bottom: 4px;
+	font-size: 1.4em;
+	color: #fff;
+}
+#santaslist.assigned .namelist{
+	overflow: hidden;
+}
+#santaslist.assigned .btn-sim.editlist{
+	display: inline-block;
+}
+
+#santaslist.assigned .namelist .nameput.added .inputval,
+#santaslist.assigned .namelist .nameput .inputval
+{
+	margin-left: 0px;
+	cursor: pointer;
+}
+#santaslist.assigned .namelist .nameput .inputval:hover{
+	background-color: rgb(97,188,83);
+}
+
+.btn-sim.submitname{
+	color: #aaa;
+	opacity: 0.3;
+	pointer-events: none;
+}
+.btn-sim.submitname:hover, .btn-sim.newname:hover, .btn-sim.assign:hover{
+	background-color: rgb(97,188,83);
+	color: #444;
+}
+.btn-sim.editname{
+	font-size: 2em;
+	padding-top: 0px;
+	padding-bottom: 1px;
+	position: relative;
+	top: 5px;
+    display: none;
+}
+
+.btn-sim.editlist{
+	display: none;
+}
+
+.deletename{
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	color: #aaa;
+	background-color: #eee;
+}
+
+.okay .btn-sim.submitname{
+	color: #555;
+	opacity: 1;
+	pointer-events: initial;
+}
+
+
+
+.expbox{
+	background-color: rgba(0,0,0,0.875);
+	padding: 40px;
+	position: fixed;
+	top: -90%;
+	z-index: 1000;
+	display: table;
+	box-shadow: inset -10px 0px 60px rgba(0,0,0,0.4);
+	animation: expdrop 0.6s ease normal;
+	-webkit-animation: expdrop 0.6s ease normal;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.expbox:after{
+	content: '✖';
+	position: fixed;
+	top: 50px;
+	right: 30px;
+	color: #222;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 100%;
+	background-color: #eee;
+	font-size: 1.3em;
+	text-align: center;
+	cursor: pointer;
+}
+
+.expbox .tablecell{
+	display: table-cell;
+	width: 100%;
+	vertical-align: middle;
+}
+.expbox p{
+	font-size: 1.8em;
+	line-height: 1.7;
+	font-weight: 700;
+	color: #fff;
+	max-width: 1024px;
+	margin: 0 auto 24px;
+}
+.expbox p .seventyfive{
+	font-weight: 700;
+}
+
+
+.red-color{
+	color: rgb(239,66,86);
+}
+.red-bg{
+	background-color: rgb(239,66,86);
+}
+.green-color{
+	color: rgb(97,188,83);
+}
+.green-bg{
+	background-color: rgb(97,188,83)
+}
+
+
+@media only screen and (max-width: 1024px){
+
+	.innerwidth-A{
+		max-width: 90%;
+		margin: 0 auto;
+	}
+
+	.expbox {
+		padding: 0 24px;
+	}
+}
+
+
+@media only screen and (max-width: 560px){
+	.namelist .nameput input, .inputval{
+		padding: 10px 16px;
+		min-width: 100%;
+	}
+
+/*	.btn-sim.editname{
+		font-size: 1.2em;
+		padding-top: 0px;
+		padding-bottom: 1px;
+		position: relative;
+		top: 5px;
+	}*/
+	.expbox p{
+		font-size: 1.4em;
+		line-height: 1.7;
+	}
+
+	.btn-sim.submitname, .btn-sim.editname {
+	    position: absolute;
+	    right: -12px;
+	    z-index: 2;
+	}
+	.btn-sim.editname {
+	    bottom: 0px;
+	    right: -4px;
+	    line-height: 0.9em;
+	 }
+
+	.btn-sim.deletename{
+	    position: absolute;
+	    right: 40px;
+	    z-index: 2;
+	    top: inherit;
+	    bottom: 0px;
+	}
+	.namelist .nameput.submitted {
+	    margin-top: 0px;
+	}
+
+	.namelist .nameput.added input, .namelist .nameput.added .inputval {
+	    margin-left: 0px;
+	}
+
+	.namelist .nameput.submitted .btn-sim.deletename {
+	    top: 0px;
+	    background-color: #ddd;
+	}
+}
+
+
+
+
+@keyframes expdrop{
+	0%	{
+		top: -100%;
+	}
+	100% {
+		top: 0%;
+	}
+}
+@-webkit-keyframes expdrop{
+	0%   {
+		top: -100%;
+	}
+	100% {
+		top: 0%;
+	}
+}
+
+
