@@ -167,7 +167,7 @@ db.mediaTest = function(){
 			.style('height', db.media.height+"px")
 			.on('click', function(){d3.select('.expbox').remove()})
 
-		var tb = box.append('div').attr('class', 'tablecell').html('<p>Santa '+d.name+' <br>you\'re getting a gift for <br> '+d.assigned+'</p> <p>⟡ '+phrases[phn]+' ⟡</p>')
+		var tb = box.append('div').attr('class', 'tablecell').html('<p>Santa '+d.name+' <br>you\'re getting a gift for <br> '+d.assigned+'</p> <p>❅ '+phrases[phn]+' ❅</p>')
 	}
 
 
