@@ -398,7 +398,7 @@ ul, p{
 		top: 0%;
 	}
 	100% {
-		top: -100%;
+		top: -120%;
 	}
 }
 @-webkit-keyframes explift{
@@ -406,7 +406,7 @@ ul, p{
 		top: 0%;
 	}
 	100% {
-		top: -100%;
+		top: -120%;
 	}
 }
 
