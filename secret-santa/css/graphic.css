@@ -245,8 +245,8 @@ ul, p{
     animation-fill-mode: forwards;
 }
 .expbox.lift{
-	animation: explift 0.6s ease normal;
-	-webkit-animation: explift 0.6s ease normal;
+	animation: explift 0.45s ease normal;
+	-webkit-animation: explift 0.45s ease normal;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
@@ -368,6 +368,9 @@ ul, p{
 	}
 	.instro{
 		font-size: 1.1em;
+	}
+	.expbox:after{
+		top: 24px;
 	}
 }
 
