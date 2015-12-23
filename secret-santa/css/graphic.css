@@ -144,7 +144,7 @@ ul, p{
 	width: 96%;
 }
 #santaslist.assigned .inputval:after{
-	content: '✴';
+	content: '⟡';
 	position: absolute;
 	right: 20px;
 	bottom: 4px;
@@ -294,7 +294,7 @@ ul, p{
 		top: 5px;
 	}*/
 	.expbox p{
-		font-size: 1.4em;
+		font-size: 1.35em;
 		line-height: 1.7;
 	}
 

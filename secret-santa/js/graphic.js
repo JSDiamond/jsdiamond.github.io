@@ -12,6 +12,7 @@ db.mediaTest = function(){
 ;(function(){
 
 	function initGraphic(){
+		d3.range(4).forEach(nameNew)
 		enableEvents()
 	}
 
@@ -40,6 +41,9 @@ db.mediaTest = function(){
 
 		if(el.value.length >= 1 && d3.event.keyCode == 13){
 			dispatch.submitname(papa.select('.submitname').node())
+			var id = parseInt( sel.attr('id').replace('inp_', '') )
+			var next = document.getElementById( 'inp_' + (id+1) )
+			if(next) next.focus()
 		}
 
 		d3.select('#santaslist').classed('assignable', d3.selectAll('.namelist .nameput.okay')[0].length>1 )
@@ -70,7 +74,9 @@ db.mediaTest = function(){
 		nameput.append('div').attr('class', 'btn-sim btn-inline submitname').text('✔')
 		nameput.append('div').attr('class', 'btn-sim btn-inline editname').text('✍')
 		nameput.append('div').attr('class', 'btn-sim btn-inline deletename').text('✖')
-		nameput.append('input').attr('placeholder', 'Name').attr("type", "text").attr("name", "input")
+		nameput.append('input').attr('placeholder', 'Name')
+			.attr("type", "text").attr("name", "input")
+			.attr("id", "inp_"+d3.selectAll('.nameput')[0].length)
 		nameput.append('p').attr('class', 'inputval')
 
 		enableEvents()
@@ -161,7 +167,7 @@ db.mediaTest = function(){
 			.style('height', db.media.height+"px")
 			.on('click', function(){d3.select('.expbox').remove()})
 
-		var tb = box.append('div').attr('class', 'tablecell').html('<p>Santa '+d.name+' <br>you\'re getting a gift for <br> '+d.assigned+'</p> <p>✴ '+phrases[phn]+' ✴</p>')
+		var tb = box.append('div').attr('class', 'tablecell').html('<p>Santa '+d.name+' <br>you\'re getting a gift for <br> '+d.assigned+'</p> <p>⟡ '+phrases[phn]+' ⟡</p>')
 	}
 
 
