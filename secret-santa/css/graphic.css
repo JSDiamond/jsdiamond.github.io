@@ -33,6 +33,30 @@ ul, p{
 	margin: 20px 0;
 }
 
+.instro{
+	padding: 10px;
+	color: rgb(97,188,83);
+}
+.inst1{
+	display: block;
+}
+.inst2{
+	display: none;
+}
+#santaslist.assigned .inst1{
+	display: none;
+}
+#santaslist.assigned .inst2{
+	display: block;
+}
+
+.only-dsk{
+	display: inline-block;
+}
+.only-mbl{
+	display: none;
+}
+
 .namelist{
 	overflow: hidden;
 }
@@ -281,6 +305,13 @@ ul, p{
 
 
 @media only screen and (max-width: 560px){
+	.only-dsk{
+		display: none;
+	}
+	.only-mbl{
+		display: inline-block;
+	}
+
 	.namelist .nameput input, .inputval{
 		padding: 10px 16px;
 		min-width: 100%;
