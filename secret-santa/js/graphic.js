@@ -16,6 +16,10 @@ db.mediaTest = function(){
 		enableEvents()
 	}
 
+	d3.selection.prototype.parent = function() {
+		return this.select(function() { return this.parentNode; });
+	}
+
 	var dispatch = d3.dispatch("submitname")
 	var inputs = d3.selectAll('.nameput input')
 
@@ -34,7 +38,7 @@ db.mediaTest = function(){
 	function nameCheck(){
 		var el = d3.event.srcElement
 			, sel = d3.select(el)
-			, papa = d3.select(sel.node().parentElement)
+			, papa = sel.parent()
 		
 		papa.classed('okay', el.value.length >= 1)
 		papa.select('.inputval').text(el.value)
@@ -52,7 +56,7 @@ db.mediaTest = function(){
 	function nameSubmit(elmnt){
 		var el = elmnt || d3.event.srcElement
 			, sel = d3.select(el)
-			, papa = d3.select(sel.node().parentElement)
+			, papa = sel.parent()
 
 		papa.classed('submitted', true)
 	}
@@ -60,7 +64,7 @@ db.mediaTest = function(){
 	function nameEdit(){
 		var el = d3.event.srcElement
 			, sel = d3.select(el)
-			, papa = d3.select(sel.node().parentElement)
+			, papa = sel.parent()
 		
 		papa.classed('okay', true)
 		papa.classed('submitted', false)	
@@ -85,7 +89,7 @@ db.mediaTest = function(){
 	function nameDelete(){
 		var el = d3.event.srcElement
 			, sel = d3.select(el)
-			, papa = d3.select(sel.node().parentElement)
+			, papa = sel.parent()
 		
 		papa.remove()
 		d3.select('#santaslist').classed('assignable', d3.selectAll('.namelist .nameput.okay')[0].length>1 )
@@ -107,7 +111,7 @@ db.mediaTest = function(){
 			if(count == viable.length) return
 
 			var result = randomChoice(1, array, true)
-			var chosen = result.chosen[0]//.select('.inputval').text()
+			var chosen = result.chosen[0]
 			
 			if(viable[count] == chosen){
 
@@ -194,5 +198,4 @@ db.mediaTest = function(){
 	}, 250))
 
 })()
-
 
